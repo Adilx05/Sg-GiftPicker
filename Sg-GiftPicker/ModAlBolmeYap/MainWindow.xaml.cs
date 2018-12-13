@@ -72,6 +72,23 @@ namespace ModAlBolmeYap
                 {
                     Sonuc_Tb.Text = "Page : " + bolum + Environment.NewLine + "Item : " + 12;
                 }
+
+                if (Copy_Cb.IsChecked == true)
+                {
+                    StringBuilder sb = new StringBuilder();
+
+                    if (mod != 0)
+                    {
+                        sb.Append("https://www.steamgifts.com/happy-holidays/search?page=" + (bolum + 1));
+                    }
+                    else
+                    {
+                        sb.Append("https://www.steamgifts.com/happy-holidays/search?page=" + bolum);
+                    }
+
+                    Clipboard.SetText(sb.ToString());
+                }
+                
             }
             catch (Exception exception)
             {
