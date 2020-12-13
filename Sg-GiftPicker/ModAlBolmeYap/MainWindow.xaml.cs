@@ -77,13 +77,28 @@ namespace ModAlBolmeYap
                 {
                     StringBuilder sb = new StringBuilder();
 
-                    if (mod != 0)
+                    if (Available_Cb.IsChecked == true)
                     {
-                        sb.Append("https://www.steamgifts.com/happy-holidays/search?page=" + (bolum + 1));
+                        if (mod != 0)
+                        {
+                            sb.Append("https://www.steamgifts.com/happy-holidays/available/search?page=" + (bolum + 1));
+                        }
+                        else
+                        {
+                            sb.Append("https://www.steamgifts.com/happy-holidays/available/search?page=" + bolum);
+                        }
                     }
+
                     else
                     {
-                        sb.Append("https://www.steamgifts.com/happy-holidays/search?page=" + bolum);
+                        if (mod != 0)
+                        {
+                            sb.Append("https://www.steamgifts.com/happy-holidays/search?page=" + (bolum + 1));
+                        }
+                        else
+                        {
+                            sb.Append("https://www.steamgifts.com/happy-holidays/search?page=" + bolum);
+                        }
                     }
 
                     Clipboard.SetText(sb.ToString());
